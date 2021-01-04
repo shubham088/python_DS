@@ -17,7 +17,7 @@ check : https://www.youtube.com/watch?v=HqPJF2L5h9U&list=PLDN4rrl48XKpZkf03iYFl-
 
 rules:
 
-      if node is at index :  i
+      if node is at index :  i (assuming starting index is 1)
       left child will be at : 2i
       right child  : 2i+1
       parent will be at : i/2 (floor value)
