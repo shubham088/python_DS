@@ -8,7 +8,7 @@ for index i:
 
 For Input → 35 33 42 10 14 19 27 44 26 31
 
-resultant => 
+resultant => 44 42 35 33 31 19 27 10 26 14
 '''
 
 class MaxHeap:
