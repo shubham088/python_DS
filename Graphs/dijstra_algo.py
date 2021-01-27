@@ -10,12 +10,12 @@ class DijkstraAlgo:
         self.source = node
 
     def findNodes(self):
-        return len(self.Graph)-1
+        return len(self.Graph)-1    #because we are using extra row of zero's
 
     def initializeVistedNodes(self):
         num = self.findNodes()
         print("no of nodes : ", num)
-        for i in range(0, num+1):
+        for i in range(0, num+1):    #because of extra zero's
             self.visited.append(0)
 
         #print("visited list at very begining : ", self.visited)
@@ -66,7 +66,7 @@ class DijkstraAlgo:
 
 
 sample_graph = [
-[0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0],                 #added extra row, column so that we can compute using index 1
 [0,0,4,2,999,999,999],
 [0,4,0,999,999,3,999],
 [0,2,999,0,2,999,4],
