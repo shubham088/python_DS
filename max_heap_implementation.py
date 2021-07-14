@@ -49,6 +49,42 @@ class MaxHeap:
         for data in self.max_heap_data:
             print(data)
 
+    def heapify(self, arr, i, size):
+
+        largest = i
+        lc = 2*i+1
+        rc = 2*i+2
+        print("largest : {}, rc : {}, lc:{}".format(largest, rc, lc))
+
+        # if largest < size and lc < size and rc < size:
+
+        if arr[largest] < arr[lc] and lc < size:
+            arr[largest], arr[lc] = arr[lc], arr[largest]
+            largest = lc
+            print("list after heapify : {} ".format(arr))
+            self.heapify(arr, 0, size)
+        
+        if arr[largest] < arr[rc] and rc < size:
+            arr[largest], arr[rc] = arr[rc], arr[largest]
+            largest = rc
+            print("list after heapify : {} ".format(arr))
+            self.heapify(arr, 0, size)
+
+        if largest == i:
+            print("final heap after deletion : {}".format(arr))
+        # else:
+        #     return arr
+
+    def pop_max(self):
+        max_element = self.max_heap_data.pop(0)
+        print("max element is : {}".format(max_element))
+        last_element = self.max_heap_data.pop()
+        self.max_heap_data.insert(0, last_element)
+        size = len(self.max_heap_data)
+        print('list after max : {}'.format(self.max_heap_data))
+        self.heapify(self.max_heap_data, 0, size)
+        print(self.max_heap_data)
+
 
 if __name__ == "__main__":
     MaxHeapObj = MaxHeap()
@@ -56,6 +92,7 @@ if __name__ == "__main__":
         print("_____Menu______")
         print("1. Insert")
         print("2. Display")
+        print("3. Pop max element")
         print("0. Exit")
 
         data = input("Enter the choice :  ")
@@ -66,6 +103,8 @@ if __name__ == "__main__":
             MaxHeapObj.insert(int(user_input))
         if int(data) == 2:
             MaxHeapObj.display()
+        if int(data) == 3:
+            MaxHeapObj.pop_max()
 
 
 
