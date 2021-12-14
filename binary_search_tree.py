@@ -1,4 +1,5 @@
 '''
+
 Properties of  BT:
 1. left child is less than root
 2. right child is more than root
